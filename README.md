@@ -19,4 +19,5 @@ vivado -mode=batch -nojournal -nolog -source C:\APS\build_project.tcl
 
 * tb_decoder скрипт не принял, добавляем вручную
 
-* Все тесты я не проверял, да и надо же не на всю халяву надеяться, удачи))
+* *Точно работают по тестам alu, decoder, rf, lsu, irq, csr, miriscv_ram, fulladders* Все тесты я не проверял, да и надо же не на всю халяву надеяться, удачи))
+
