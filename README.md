@@ -14,4 +14,5 @@ call C:\Xilinx\Vivado\2019.2\settings64.bat
 vivado -mode=batch -nojournal -nolog -source C:\APS\build_project.tcl
 ````
 В результате будет создана папка **project_1**
+
 После этого открываем проект в vivado.
