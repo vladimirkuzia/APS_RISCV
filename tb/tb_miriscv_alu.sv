@@ -36,12 +36,12 @@ wire        comparison_result;
 
 alu_rscv DUT
 (
-  .alu_op (operator  ),
-  .a      (operand_a  ),
-  .b      (operand_b  ),
+  .alu_op_i (operator  ),
+  .a_i      (operand_a  ),
+  .b_i      (operand_b  ),
 
-  .result (result     ),
-  .flag   (comparison_result)
+  .result_o (result     ),
+  .flag_o   (comparison_result)
 );
 
 integer     i, err_count = 0;

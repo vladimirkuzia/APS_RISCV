@@ -46,21 +46,22 @@ end
 
 
 always_comb begin 
+
     exception_or_exc_h_wire = exception_i | exc_h;
-    exc_h_D_wire            = exception_or_exc_h_wire & ~mret_i;
+    exc_h_D_wire = exception_or_exc_h_wire & ~mret_i;
 end
 
 always_comb begin 
     irq_or_irq_h_wire = irq_o_wire | irq_h;
-    irq_h_D_wire      = irq_or_irq_h_wire & ~irq_ret_wire;
+    irq_h_D_wire = irq_or_irq_h_wire & ~irq_ret_wire;
 end
 
-assign nor_wire     = ~(irq_h | exception_or_exc_h_wire);
+assign nor_wire = ~(irq_h | exception_or_exc_h_wire);
 assign irq_ret_wire = mret_i & ~exception_or_exc_h_wire;
-assign irq_and_mie  = irq_req_i & mie_i;  
-assign irq_o_wire   = irq_and_mie & nor_wire;  
-assign irq_cause_o  = 32'h80000010;
-assign irq_o        = irq_o_wire;  
-assign irq_ret_o    = irq_ret_wire;
+assign irq_and_mie = irq_req_i & mie_i;  
+assign irq_o_wire = irq_and_mie & nor_wire;  
+assign irq_cause_o = 32'h1000_0010;
+assign irq_o = irq_o_wire;  
+assign irq_ret_o = irq_ret_wire;
 
 endmodule
